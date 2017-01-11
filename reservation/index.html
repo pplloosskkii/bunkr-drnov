@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="cs"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Bunkr Drnov</title>
+        <meta name="description" content="Rezervace - Bunkr Drnov - Muzeum studené války a protivzdušné obrany" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" media="screen,projection,tv" href="./css/main.css" type="text/css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-23003382-1', 'auto');
+        </script>
+    </head>
+    <body class="" ng-app="drnovReservationApp" ng-controller="drnCtrl as main">
+    
+    <div class="container" ng-cloak>
+
+        <div class="reservation-action">
+            <div ng-show="main.selectedDate" class="form-container">
+                <form ng-submit="main.submitReservation()" class="form-reservation">
+                    <h3>Rezervace místa na prohlídce</h3>
+                    <label>Datum: </label>
+                    <div class="content date">{{ main.selectedDate.dayOfWeek }} {{ main.selectedDate.day }}.{{ main.selectedDate.month }} od <b>{{ main.selectedDate.time }}</b></div>
+                    <br>
+
+                    <label>Volných míst: </label>
+                    <div class="content free-slots">{{ main.selectedDate.freeSlots }}</div>
+                    <br>
+
+                    <label for="input-slots" class="required">Vyberte počet míst:</label>
+                    <div class="content taken-slots">
+                        <a href="" ng-click="main.places(-1)" class="circles"><i class="fa fa-minus-circle"></i></a>
+                        <input type="number" min="1" max="{{ main.selectedDate.freeSlots }}" id="input-slots" ng-model="main.reservation.placesReserved" required tabindex="1">
+                        <a href="" ng-click="main.places(1)" class="circles"><i class="fa fa-plus-circle"></i></a>
+                    </div>
+                    <br>
+
+                    <label for="input-name" class="required">Vaše jméno a příjmení:</label>
+                    <div class="content">
+                        <input type="text" size="35" ng-model="main.reservation.fullName" required id="input-name" tabindex="2">
+                    </div>
+                    <br>
+
+                    <label for="input-email" class="required">Váš email:</label>
+                    <div class="content">
+                        <input type="email" size="35" ng-model="main.reservation.email" required id="input-email" tabindex="3">
+                    </div>
+                    <br>
+
+                    <label for="input-note">Poznámka:</label>
+                    <div class="content">
+                        <textarea cols="40" rows="3" id="input-note" ng-model="main.reservation.notes" tabindex="4"></textarea>
+                    </div>
+                    <br>
+    <!--                 <label> </label><input type="checkbox" id="chk-newsletter" ng-model="main.reservation.newsletter" value="1"> <label for="chk-newsletter">Přeji si nechat zasílat novinky (max 4x za rok): </label><br> -->
+
+                    <label>&nbsp;</label>
+                    <div class="content"><button type="submit" class="button button-submit" tabindex="5">Potvrdit rezervaci</button> <button ng-click="main.reserveAt(null)" type="button" class="button button-cancel" tabindex="6">Zrušit</button></div>
+                </form>
+            </div>
+
+            <div ng-show="main.reservationPending" class="loading">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Provádím rezervaci. Bude to jen chvilička...
+            </div>
+
+            <div ng-if="main.reservationFailed" class="error-message">
+                <i class="fa fa-exclamation-circle"></i> Ajajaj! Při rezervaci nastala chyba.<br>
+                <small>Zkuste to znovu, případně využijte pro rezervaci email <a href="mailto:info@bunkr-drnov.cz">info@bunkr-drnov.cz</a></small>
+            </div>
+
+            <div ng-if="main.reservationDone" class="box-message">
+                <i class="fa fa-thumbs-o-up"></i> Jupí! Rezervace byla dokončena! Těšíme se na Vaši návštěvu. <br>
+                <small>Poslali jsme Vám e-mail s rekapitulací. Jen pro jistotu.</small>
+            </div>
+        </div>
+
+        <div class="date-list clearfix" ng-show="!main.selectedDate && !main.reservationPending && !main.reservationDone">
+            <div ng-show="!main.loaded" class="loading">
+                <i class="fa fa-circle-o-notch fa-spin"></i> Načítám...
+            </div>
+
+            <div ng-if="main.loaded && main.dates.length == 0" class="no-dates">
+                <h3>Žádné termíny nejsou momentálně dostupné.</h3>
+                <p>Buď to zkuste později, nebo využijte náš <a href="/#newsletter" target="_top">newsletter</a> a my se vám ozveme, až tu bude něco nového.</p>
+            </div>
+            <div ng-if="main.loaded && main.dates.length > 0">
+                <h3>Pro rezervaci místa na prohlídce vyberte prosím termín</h3>
+                <div ng-repeat="(monthId, month) in main.dates" class="by-date">
+                    <div ng-if="monthId !== 'length'">
+                        <div class="date-resume">{{monthId|date:"EEEE d.M."}}</div>
+                        <div ng-repeat="date in month" class="date" ng-animate="date" ng-click="main.reserveAt(date);" ng-class="{ 'date-full': date.freeSlots == 0, 'date-free': date.freeSlots > 0}">
+
+                            od <b>{{ date.time }}</b>
+                            <em ng-if="date.freeSlots == 0"><br>Obsazeno</em><br>
+                            <a ng-if="date.freeSlots > 0" ng-click="main.reserveAt(date)" href=""><b class="free-slots">{{ date.freeSlots}}</b> volných míst</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-locale_cs-cz.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="./js/main.js"></script>
+</html>

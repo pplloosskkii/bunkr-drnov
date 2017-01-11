@@ -1,0 +1,7 @@
+<i ng-if="!loaded" class="fa fa-spin fa-circle-o-notch"></i> 
+<span ng-cloak ng-if="loaded && available">
+	Termín nejbližších prohlídek: 
+	<a href="#rezervace" class="transition">
+		<b>{{ date.dayOfWeek }} {{ date.day }}.{{ date.month }}.</b> od {{ date.times | join }}
+	</a>
+</span>

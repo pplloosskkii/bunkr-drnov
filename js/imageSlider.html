@@ -1,0 +1,10 @@
+<div class="image-list">
+	<div ng-repeat="image in imgs track by $index" ng-show="image.visible" ng-swipe-left="next()" ng-swipe-right="prev()">
+		<div class="link-nav">
+			<a class="photo-link prev fa fa-chevron-left" ng-click="prev()" ng-if="selectedImg > 0"></a>
+			<a class="photo-link next fa fa-chevron-right" ng-click="next()" ng-if="selectedImg < images.length - 1"></a>
+		</div>
+		<img ng-src="{{ image.src }}" alt="{{ image.alt }}" class="center image">
+		<small>{{ alts[$index] }}</small>
+	</div>
+</div>'

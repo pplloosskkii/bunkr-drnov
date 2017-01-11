@@ -1,0 +1,267 @@
+$text-color:#fff0dc;
+$background-color:darken(#b0ad8b, 20%);
+$menu-background-color:#34622f;
+$content-link-color:#afdbd9;
+$content-background-color:#222;
+$content-important-background-color:$menu-background-color;
+$logo-background-color:#950b1b;
+
+$border-radius:8px;
+$grid-size:30px;
+$p-margin-size:20px;
+$inverse-text-color:#E7EBD4;
+
+::-moz-selection { 
+    background: lighten($logo-background-color, 10%);
+}
+
+::selection {
+background: lighten($logo-background-color, 10%);
+}
+
+/* body and basics */
+body, p, ul, ol, td { 
+    font-size:105%;
+}
+body {
+    font-family:Arial,default-sans;
+    font-size:100%;
+    color:$text-color;
+    line-height:150%;
+    //min-width:320px;
+    margin:0;
+    padding:$grid-size / 2;
+    background:$background-color;
+
+    @media (min-width:1200px) {
+        .container>.row-main {
+            min-width: 1100px;
+        }
+    }
+
+    @media (min-width:1100px) and (max-width:1150px) {
+        font-size:100%;
+        .container>.row-main .large-10 {
+            max-width:84%;             
+        }
+    }
+
+    @media (max-width:800px) {
+        font-size:100%;
+        padding:5px;
+        .container>.row-main .columns {
+            padding-left:0;
+            padding-right:0;
+        }
+    }
+
+}
+h1, h2, h3, h4 { color:$text-color; font-family:"Exo 2", Helvetica,Geneva,Arial,default-sans; font-weight:bold; }
+h2 { font-size: 130%; border-bottom:2px dotted #666; }
+h3 { font-size: 100%; margin-top:0;}
+h4 {
+    font-size:100%;
+    color:#fc3;
+    border-bottom:1px solid #fc3;
+}
+a {
+    color:$logo-background-color;
+    &:hover {
+        color:lighten($logo-background-color, 10%);
+    }
+}
+
+.clearfix::after {
+    content:'';
+    display:table;
+    clear:both;
+}
+.date-list {
+    .by-date { margin: $grid-size / 2 0; clear:both; display:block; }
+    .date-resume { border-bottom:1px solid $background-color; margin: 5px 0px; }
+    .date {
+        display:inline-block;
+        width:135px;
+        height:50px;
+        background:lighten($menu-background-color, 5%);
+        color:darken($text-color, 10%);
+        a { color: darken($text-color, 20%); text-decoration:none; }
+        margin-right:$grid-size / 3;
+        margin-bottom:$grid-size / 3;
+        padding:$grid-size /2;
+        &.date-full {
+            opacity:.7;
+        }
+        &.date-free {
+            cursor:pointer;
+            transition:all .3s ease-out;
+            &:hover {
+                background:darken($logo-background-color, 10%);
+            }
+        }
+        border-radius:$border-radius;
+
+        .free-slots {
+            
+        }
+    }
+}
+
+.form-reservation {
+    label, button { cursor: pointer; }
+    label {
+        display:inline-block;
+        width:220px;
+        line-height: $grid-size;
+        vertical-align: top;
+        text-align:right;
+        &.required::before {
+            content:"* ";
+            color:red;
+        }
+        /* &:not(.required)::after {
+            content:" *";
+            opacity:0;
+            visibility: hidden;
+        } */
+    }
+    div.content {
+        display:inline-block;
+        line-height:$grid-size;
+    }
+
+    .circles .fa {
+        font-size:19px;
+        vertical-align:middle;
+    }
+
+    input[type='text'], input[type='email'], input[type='number'], textarea {
+        padding:$grid-size / 5;
+        border-radius:$border-radius;
+        border:1px solid #333;
+        margin:3px;
+        outline:none;
+        &:focus {
+            border:1px solid $logo-background-color;
+            outline:none;
+        }
+    }
+
+    span {
+        font-size:18px;
+        line-height:$grid-size;
+    }
+
+    .button {
+        padding:$grid-size / 3 $grid-size / 2;
+        margin:3px;
+        border:0;
+        background:#333;
+        border-radius:$border-radius;
+        font-size:100%;
+        color:#efe;
+        transition:all .3s ease-out;
+        outline:none;
+        &:hover {
+            background:lighten(#333, 10%);
+        }
+    }
+    .button-submit {
+        background:$menu-background-color;
+        &:hover {
+            background:lighten($menu-background-color, 10%);
+        }
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .form-reservation {
+        label {
+            display:block;
+            line-height: $grid-size;
+            text-align:left;
+        }
+        div.content.date, div.content.free-slots {
+            font-size:22px;
+        }
+        div.content {
+            width:90%;
+        }
+        .circles .fa {
+            font-size:25px;
+        }
+        input[type='text'], input[type='email'], textarea {
+            width:100%;
+        }
+        input[type='number'] {
+            width:80px;
+        }
+    }
+}
+
+.box-message {
+    padding:$grid-size / 2 $grid-size;
+    margin:$grid-size $grid-size / 3;
+    border-radius:$border-radius;
+    background:lighten($background-color, 25%);
+    display:inline-block;
+    line-height:$grid-size;
+    color:$menu-background-color;
+    .fa {
+        font-size:150%;
+        vertical-align: top;
+        line-height:$grid-size;
+        margin-right:$grid-size / 2;
+    }
+}
+
+.error-message {
+    @extend .box-message;
+    color:lighten($logo-background-color, 10%);
+    .fa {
+        color:$logo-background-color;
+    }
+}
+
+.loading {
+    @extend .box-message;
+}
+
+.cancel-reservation {
+    .no-reservation {
+        @extend .error-message;
+    }
+}
+
+
+
+.date.ng-enter {
+  transition: opacity .3s;
+  opacity:0;
+}
+
+.date.ng-enter-active {
+  opacity:1;
+}
+
+.form-container.ng-hide-add {
+  opacity: 1;
+  transition: opacity .2s;
+}
+
+.form-container.ng-hide-add-active {
+  opacity: 0;
+}
+
+.form-container.ng-hide-remove, .loading.ng-hide-remove, .date-list.ng-hide-remove  {
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.form-container.ng-hide-remove-active, .loading.ng-hide-remove-active {
+  opacity: 1;
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="cs"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Bunkr Drnov</title>
+        <meta name="description" content="Bunkr Drnov - Muzeum studené války a protivzdušné obrany" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="./bower_components/foundation/css/normalize.css" />
+        <link rel="stylesheet" href="./bower_components/foundation/css/foundation.min.css" />
+        <link rel="stylesheet" media="screen,projection,tv" href="./bower_components/font-awesome/css/font-awesome.min.css" type="text/css" />  
+        <link rel="stylesheet" media="screen,projection,tv" href="./css/main.css" type="text/css" />
+        <link href='http://fonts.googleapis.com/css?family=Exo+2&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+        <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+
+		<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-23003382-1', 'auto');
+		ga('send', 'pageview');
+		</script>
+    </head>
+    <body class="" ng-app="drnovGalleryApp" ng-controller="drnCtrl">
+        <div id="top"></div>
+        <div class="container">
+            <div class="row row-main">
+                <nav class="large-2 small-12 columns">
+                    <ul>
+                        <li class="logo" style="margin-top:0;"><h1><a href="#top"><span>Bunkr Drnov</span></a></h1></li>
+                        <li class="item">
+                            <a href="#top" class="transition"><i class="fa fa-home"></i> Úvod</a>
+                        </li>
+                        <li class="item">
+                            <a href="#muzeum" class="transition"><i class="fa fa-university"></i> Muzeum a expozice</a>
+                        </li>
+                        <li class="item">
+                            <a href="#visits" class="transition pulse"><i class="fa fa-eye"></i> Prohlídky</a>
+                        </li>
+                        <li class="item">
+                            <a href="#os" class="transition"><i class="fa fa-support"></i> O nás</a>
+                        </li>
+                        <li class="item important">
+                            <a href="#location" class="transition"><i class="fa fa-map-marker"></i> Kde nás najdete</a>
+                        </li>
+                        <li class="item right">
+                            <div class="social-sharer">
+                                <a class="sharer fb" href="https://www.facebook.com/pages/Bunkr-Drnov/245581742273455" target="_blank" alt="Facebook"><i class="fa fa-facebook"></i></a>
+                                <a class="sharer tw" href="https://twitter.com/BunkrDrnov" target="_blank" alt="Twitter"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="large-10 small-12 columns">
+                    <div class="content">
+                        <section class="welcome">
+                            <h2>Bunkr Drnov - Muzeum studené války a protivzdušné obrany</h2>
+                            <p>Přijďte navštívit <strong>jeden z největších zpřístupněných bunkrů v ČR</strong> a nasát atmosféru období studené války v tehdejším Československu.
+                            Provedeme vás rozsáhlým podzemím o velikosti <strong>5500m<sup>2</sup></strong> a seznámíme vás s tím,
+                            jak objekt fungoval a jaké bylo jeho vybavení pro případ válečného ohrožení. Dále si pak sami zblízka prohlédnete <strong>sovětskou raketovou techniku</strong> a nahlédnete do sálů bojového velení, odkud byla řízena.
+                            </p>
+<!--                              <div class="news">
+                                <h4>Aktuálně</h4>
+                                <ul>
+                                    <li>Nejbližší prohlídky se uskutešní </li>
+                                </ul>
+                                <br>
+                            </div> -->
+                            <div class="section-image">
+                            	<img src="./images/0011.jpg" image-slider images="['./images/0011.jpg', './images/0025.jpg', './images/0024.jpg', './images/0020.jpg']" alts="['Sály bojového velení', 'Strojovna dieselagregátů', 'Protitlakové dveře', 'Venkovní prostory a návštěvnické centrum']" class="image" />
+                        	</div>
+                        </section>
+                        <section id="muzeum">
+                            <h2>Muzeum a expozice</h2>
+                            <div class="section-image">          
+                                <img src="./images/0022.jpg" image-slider images="['./images/0022.jpg', './images/0023.jpg']" alts="['Expozice raketové techniky', 'Expozice raketové techniky']" class="image" />
+                        	</div>
+                            <p>Muzeum studené války a protivzdušné obrany se nachází v podzemním objektu, který dříve armádě sloužil jako Sdružené velitelské stanoviště
+                                <b>71.protiletadlové raketové brigády a 56.radiotechnického praporu</b>. Objekt byl postaven v letech 1981 až 1984. Dne 1. května 1985 začíná armáda objekt aktivně
+                                používat. Až do konce provozu v roce 2003 se odsud nepřetržitě zajišťovala bezpečnost vzdušného prostoru nad Prahou. Následuje
+                                odtajnění a převod objektu spolku okolních obcí. V roce 2009 začíná <b>občanské sdružení Bunkr Drnov</b> s přípravami pro zpřístupnění objektu veřejnosti.
+                            </p>
+                            <p>
+                                Celý několikapatrový objekt je vybaven <b>původním technickým zařízením</b>, které je zcela unikátní a velmi dobře zachovalé. V části objektu,
+                                která prošla rekonstrukcí, je umístěna <b>expozice raketové techniky</b>. V současné době si zde návštěvníci mohou zblízka prohlédnout sovětské rakety systémů <b>S-75 Volchov, S-125 Něva, S-200 Vega a 2K12 Kub</b>. V expozici se nachází i "pradědeček" protivzdušných obranných prostředků - dvojkanón <b>PLDvK vz. 53</b>. Mimo toho jsou také vystaveny drobnější exponáty včetně protiletadlových raket OSA a STRELA.
+                            </p>
+                        </section>
+                        <section class="visits" id="visits">
+                            <h2>Prohlídky</h2>
+                            <div class="section-image">
+                            	<img src="./images/planek2.png" class="center image" alt="Mapa prohlídkové trasy" title="Mapa prohlídkové trasy" />
+                            	<!-- <small>Mapa prohlídkové trasy</small> -->
+                        	</div>
+                            <p>Nabízíme vám prohlídku rozsáhlých a dříve přísně utajovaných prostor podzemního velitelského stanoviště protivzdušné obrany Prahy.
+                            </p>
+                            <p>
+                                <b>V první části</b> prohlídky vás odborný průvodce provede <b>technologickým zázemím objektu</b>, které sloužilo pro udržení 
+                               bojeschopnosti při různé vnější chemické a radiační situaci, a ukáže, jak pracují 
+                               jednotlivé systémy zajištění životaschopnosti obsluh a chodu techniky.
+                           </p>
+                           <p>
+                             <b>V druhé části</b> prohlídky navštívíte sály bojového velení a bývalý voják, který v bunkru sloužil téměř 10 let, vás seznámí s tím, <b>jak protivzdušná obrana fungovala</b> jako celek a podá výklad k sovětské raketové technice používané k obraně vzdušného prostoru Československé, později České republiky. Zblízka si budete moci prohlédnout kompletní <b>rakety komplexů S-75, S-125, S-200</b>, které jsou umístěny v naší unikátní expozici.
+                            </p>
+                            <p>
+                                Délka prohlídky je cca 65 - 75 minut.
+                            </p>
+                            <h4>Vstupné</h4>
+                            <table class="entry">
+                                <tbody>
+                                    <tr>
+                                        <th>Děti do 6 let</th>
+                                        <td>
+                                            zdarma
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Děti od 6 do 15 let</th>
+                                        <td>
+                                            70 Kč
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Dospělí</th>
+                                        <td>
+                                            100 Kč
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Senioři nad 65 let</th>
+                                        <td>
+                                            70 Kč
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mimořádná prohlídka pro skupiny</th>
+                                        <td>
+                                            <a href="#group" style="color:#222;">více info</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h4 id="rezervace">Nejbližší termíny prohlídek</h4>
+                            <div class="iframe-wrapper">
+                                <iframe id="form" src="./reservation/"
+                                        frameborder="0" allowtransparency="true">
+                                </iframe>
+                            </div>
+                            <div class="small right">
+                                <a href="./reservation/" target="_blank">Otevřít rezervační formulář v novém okně</a>
+                            </div>
+                            <p></p>
+
+
+                            <h4>Pravidla provozu</h4>
+                            <ul>
+                                <li>otevřeno je <strong>pouze v termínech</strong> uvedených v rezervačním formuláři.</li>
+                                <li>prohlídka bude přednostně umožněna návětěvníkům s rezervovaným místem na prohlídce</li>
+                                <li>maximální velikost skupiny je 40 osob</li>
+                                <li>během prohlídek je otevřené <a href="#center">návštěvnické centrum</a>, kde je možnost studeného i teplého občerstvení - <strong>guláš, pivo, limonáda, zmrzlina, káva, čaj, sladkosti, atp.</strong></li>
+                                <li><a href="#location">příjezdová komunikace</a> k objektu je otevřena hodinu před a hodinu po prohlídkách.</li>
+                            </ul>
+
+                            <p class="small">Návštěvníci jsou povinni řídit se návštěvním řádem, který je k nahlédnutí na místě. Doporučujeme teple se obléci, teplota uvnitř bunkru je celoročně cca 9-11°C. Během prohlídky je možno pořizovat fotografie pro osobní potřebu. Prohlídka bunkru není vhodná pro děti do 6ti let. Domácím mazlíčkům vstup nepovolujeme.</p>
+                        </section>
+                        <section id="group">
+                            <h4>Skupinová prohlídka</h4>
+                            <p>
+                                Pokud máte zájem o prohlídku v jiném termínu, než který je uveden ve formuláři, nabízíme možnost objednat mimořádnou skupinovou prohlídku dle Vašich individuálních časových požadavků.
+                                Počet účastníků prohlídky může být 1&nbsp;-&nbsp;30 osob a délka prohlídky je cca 60 minut.
+                            </p>
+                            <p>
+                                Základní cena za takovouto skupinovou prohlídku je <b>3000 Kč - vždy se platí jako za plně obsazenou skupinu</b>. Pro více informací nás kontaktujte <a href="mailto:info@bunkr-drnov.cz">emailem</a>.
+                            </p>
+                            <h4>Prohlídky pro školy</h4>
+                            <p>
+                                Nabízíme také prohlídky pro školy, které mohou být uzpůsobené vašim konkrétním potřebám. Kontaktujte nás emailem pro více informací.
+                            </p>
+                        </section>
+                        <section id="newsletter">
+                            <h3>Chcete být informováni o novinkách a termínech prohlídek?</h3>
+                            <form class="mailchimp-form" action="http://bunkr-drnov.us3.list-manage.com/subscribe/post?u=e58445973bd40337d798f41be&amp;id=c342b2fd4b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                                <div class="row">
+                                    <div class="large-6 small-12 columns" style="padding:30px; text-align:right;">
+                                        <input type="hidden" name="b_e58445973bd40337d798f41be_c342b2fd4b" value="" />
+                                        <input type="email" name="EMAIL" required placeholder="email@napriklad.cz"/>
+                                        <button value="Subscribe" type="submit" class="small primary button" id="subscribe-button">Odeslat</button>
+                                    </div>
+                                    <div class="small-12 large-6 columns text" style="padding:30px;">
+                                        Zanechte nám svou emailovou adresu a my se vám ozveme, jakmile zveřejníme nové termíny prohlídek, nebo u nás bude něco nového.
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <section id="center">
+                            <h2>Ostatní služby</h2>
+                            <img src="./images/0020.jpg" class="center image" alt="Návštěvnické centrum" title="Návštěvnické centrum" />
+                            <p>V našem Návštěvnickém centru se můžete občerstvit teplými a studenými nápoji, naobědvat se, či jen něco malého zakousnout před prohlídkou bunkru. Jsou zde umístěny i bezbariérové toalety, k dispozici je parkoviště pro cca 40 vozů.</p>
+                        </section>
+                        <section id="os">
+                            <h2>O nás</h2>
+                            <img src="./images/0014.jpg" class="center image" alt="Výhled z bunkru" title="Občanské sdružení" />
+                            <p>Sdružení Bunkr Drnov vzniklo v roce 2009 a ve spolupráci s královským městem Slaný a obcemi Žižice, Knovíz, Zvoleněves a Podlešín usiluje o využití těchto netradičních prostor pro vzdělávací a kulturní aktivity určené široké veřejnosti. Mezi naše hlavní cíle patří vybudování muzea Studené války a protivzdušné obrany v prostorách podzemního bunkru.</p>
+                            <p>Celý projekt je financován z příspěvků, dotací a darů. Náklady na údržbu a úpravy nutné pro vstup veřejnosti jsou vzhledem k velikosti a povaze objektu značné. <b>Proto budeme velice rádi za Vaši podporu.</b> Jsme schopni na oplátku nabídnout Vaše reklamní zviditelnění, které spatří tisíce návštěvníků ročně.</p>
+                            <p>Uvítáme nabídky vojenské techniky, která pochází z doby působení objektu. Část vybavení byla odvezena armádou při opuštění objektu a jejich zpětné
+                                získání by pomohlo autenticitě prostoru. Taktéž uvítáme fotografické materiály a videodokumentaci, jakkoliv se vztahující k historii místa
+                                či konkrétních objektů.</p>
+                            <ul>
+                                <li>E-mail: <span style="color:#fc3;">info@bunkr-drnov.cz</span></li>
+                            </ul>
+                            <p>Diskusní fórum je na stránkách spřáteleného webu <a href="http://forum.valka.cz/viewtopic.php/title/CZE-Drnov-u-Slaneho-Muzeum-studene-valky-a-PVO-Ceskoslovenska/t/112557" target="_blank">forum.valka.cz</a>.</p>
+                        </section>
+                        <section id="location">
+                            <h2>Kde nás najdete</h2>
+                            <div class="map-container">
+                                <div id="mo" onmousedown="hideMapOverlay()">klikněte pro interaktivní mapu</div>
+                                <div id="m"></div>
+                            </div>
+                            <div id="map-controls" class="row">
+                                <div class="large-3 small-6 columns"><a onclick="setMapBasic()">Mapa</a></div>
+                                <div class="large-3 small-6 columns"><a onclick="setMapNavigation()">Autem</a></div>
+                                <div class="large-3 small-6 columns"><a onclick="setMapTrain()">Vlakem</a></div>
+                                <div class="large-3 small-6 columns"><a onclick="setMapBicycle()">Na kole</a></div>
+                            </div>
+                            <!-- <img src="./images/0013.jpg" class="center image" alt="Mapa" title="Kde nás najdete" /><br /> -->
+                            <br />
+                            <div>
+                                    <p>Najdete nás 5km od města Slaný.</p>
+                                    <p>
+	                                    Příjezdová komunikace: <a target="_blank" href="https://www.google.com/maps?q=50.2366651,+14.17266369&num=1&t=h&vpsrc=0&ie=UTF8&z=15&iwloc=A">50°14'11.994N, 14°10'21.589E</a>.<br>
+	                                    Parkoviště u objektu: <a target="_blank" href="https://www.google.com/maps?q=50.229308,+14.160726&num=1&t=h&vpsrc=0&ie=UTF8&z=15&iwloc=A">50°13'45.51"N, 14°9'38.61"E</a>.
+                                    </p>
+                                    <p>
+                                    	<span style="color:#fc3;">info@bunkr-drnov.cz</span>
+                                    </p> 
+                            </div>
+                            <div>
+                                    <pre>
+Poštovní adresa o.s.:
+
+Bunkr Drnov, o.s.
+Strakonická 12
+Praha 5 – Lahovičky
+15900
+
+IČ: 22832092
+DIČ: CZ22832092
+
+Bankovní spojení: 235210854/0300
+                                    </pre>
+                            </div>
+                        </section>
+                        <section>          
+                            <div id="fb-root"></div>
+                            <script>(function(d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id))
+                                        return;
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = "//connect.facebook.net/cs_CZ/all.js#xfbml=1&appId=130321352563";
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                            <div class="fb-like" data-href="http://www.bunkr-drnov.cz/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-colorscheme="dark" data-width="225"></div>
+                        </section>
+                    </div>
+                <footer class="footer">
+                    Vyrobeno v Bunkru Drnov
+                </footer>
+                </div>
+            </div>
+        </div>
+        <script src="./bower_components/modernizr/modernizr.js"></script>
+        <script src="./bower_components/jquery/jquery.min.js"></script>
+        <script src="./bower_components/angular/angular.min.js"></script>
+        <script src="./bower_components/angular-touch/angular-touch.min.js"></script>
+        <script src="js/directives.js"></script>
+        <script type="text/javascript" src="http://api4.mapy.cz/loader.js"></script>
+        <script type="text/javascript">Loader.load();</script>        
+        <script src="js/script.js"></script>
+        <script src="js/map.js"></script>
+    </body>
+</html>

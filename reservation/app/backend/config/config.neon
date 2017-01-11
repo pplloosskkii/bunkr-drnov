@@ -1,0 +1,43 @@
+common:
+    php:
+        date.timezone: Europe/Prague
+        session.cookie_path: /
+        # zlib.output_compression: yes
+
+
+    nette:
+        application:
+            #errorPresenter: Error
+
+        debugger:
+            maxDepth: 5
+
+        session:
+            debugger: true
+            autoStart: smart
+            expiration: 0
+
+        database:
+            default:
+                dsn: %database.dsn%
+                user: %database.user%
+                password: %database.password%
+
+        container:
+            debugger: true
+
+    parameters:
+
+
+    services:
+        datesManager: BD\Model\DatesManager
+        mailer: BD\Model\Mailer
+
+
+production < common:
+    includes:
+        - config-prod.neon
+ 
+development < common:
+    includes:
+        - config-local.neon

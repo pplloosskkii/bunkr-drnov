@@ -1,0 +1,16 @@
+<ifModule mod_headers.c>
+ExpiresActive On
+
+# Expires after 1 month
+<filesMatch ".(gif|png|jpg|jpeg|ico|pdf|txt|woff)$">
+	Header set Cache-Control "max-age=2592000"
+	Header append Cache-Control "public"
+</filesMatch>
+
+# Expires after 1 day
+<filesMatch ".(css|htm|html|js)$">
+	Header set Cache-Control "max-age=86400"
+	Header append Cache-Control "private, must-revalidate"
+</filesMatch>
+
+</ifModule>

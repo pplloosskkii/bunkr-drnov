@@ -1,0 +1,200 @@
+::-moz-selection {
+  background: #c40f24; }
+
+::selection {
+  background: #c40f24; }
+
+/* body and basics */
+body, p, ul, ol, td {
+  font-size: 105%; }
+
+body {
+  font-family: Arial,default-sans;
+  font-size: 100%;
+  color: #fff0dc;
+  line-height: 150%;
+  margin: 0;
+  padding: 15px;
+  background: #7f7b56; }
+  @media (min-width: 1200px) {
+    body .container > .row-main {
+      min-width: 1100px; } }
+  @media (min-width: 1100px) and (max-width: 1150px) {
+    body {
+      font-size: 100%; }
+      body .container > .row-main .large-10 {
+        max-width: 84%; } }
+  @media (max-width: 800px) {
+    body {
+      font-size: 100%;
+      padding: 5px; }
+      body .container > .row-main .columns {
+        padding-left: 0;
+        padding-right: 0; } }
+
+h1, h2, h3, h4 {
+  color: #fff0dc;
+  font-family: "Exo 2", Helvetica,Geneva,Arial,default-sans;
+  font-weight: bold; }
+
+h2 {
+  font-size: 130%;
+  border-bottom: 2px dotted #666; }
+
+h3 {
+  font-size: 100%;
+  margin-top: 0; }
+
+h4 {
+  font-size: 100%;
+  color: #fc3;
+  border-bottom: 1px solid #fc3; }
+
+a {
+  color: #950b1b; }
+  a:hover {
+    color: #c40f24; }
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both; }
+
+.date-list .by-date {
+  margin: 15px 0;
+  clear: both;
+  display: block; }
+.date-list .date-resume {
+  border-bottom: 1px solid #7f7b56;
+  margin: 5px 0px; }
+.date-list .date {
+  display: inline-block;
+  width: 135px;
+  height: 50px;
+  background: #3d7337;
+  color: #ffdaa9;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 8px; }
+  .date-list .date a {
+    color: #ffc476;
+    text-decoration: none; }
+  .date-list .date.date-full {
+    opacity: .7; }
+  .date-list .date.date-free {
+    cursor: pointer;
+    transition: all .3s ease-out; }
+    .date-list .date.date-free:hover {
+      background: #660712; }
+
+.form-reservation label, .form-reservation button {
+  cursor: pointer; }
+.form-reservation label {
+  display: inline-block;
+  width: 220px;
+  line-height: 30px;
+  vertical-align: top;
+  text-align: right;
+  /* &:not(.required)::after {
+      content:" *";
+      opacity:0;
+      visibility: hidden;
+  } */ }
+  .form-reservation label.required::before {
+    content: "* ";
+    color: red; }
+.form-reservation div.content {
+  display: inline-block;
+  line-height: 30px; }
+.form-reservation .circles .fa {
+  font-size: 19px;
+  vertical-align: middle; }
+.form-reservation input[type='text'], .form-reservation input[type='email'], .form-reservation input[type='number'], .form-reservation textarea {
+  padding: 6px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  margin: 3px;
+  outline: none; }
+  .form-reservation input[type='text']:focus, .form-reservation input[type='email']:focus, .form-reservation input[type='number']:focus, .form-reservation textarea:focus {
+    border: 1px solid #950b1b;
+    outline: none; }
+.form-reservation span {
+  font-size: 18px;
+  line-height: 30px; }
+.form-reservation .button {
+  padding: 10px 15px;
+  margin: 3px;
+  border: 0;
+  background: #333;
+  border-radius: 8px;
+  font-size: 100%;
+  color: #efe;
+  transition: all .3s ease-out;
+  outline: none; }
+  .form-reservation .button:hover {
+    background: #4d4d4d; }
+.form-reservation .button-submit {
+  background: #34622f; }
+  .form-reservation .button-submit:hover {
+    background: #468440; }
+
+@media screen and (max-width: 630px) {
+  .form-reservation label {
+    display: block;
+    line-height: 30px;
+    text-align: left; }
+  .form-reservation div.content.date, .form-reservation div.content.free-slots {
+    font-size: 22px; }
+  .form-reservation div.content {
+    width: 90%; }
+  .form-reservation .circles .fa {
+    font-size: 25px; }
+  .form-reservation input[type='text'], .form-reservation input[type='email'], .form-reservation textarea {
+    width: 100%; }
+  .form-reservation input[type='number'] {
+    width: 80px; } }
+.box-message, .error-message, .cancel-reservation .no-reservation, .loading {
+  padding: 15px 30px;
+  margin: 30px 10px;
+  border-radius: 8px;
+  background: #bab89a;
+  display: inline-block;
+  line-height: 30px;
+  color: #34622f; }
+  .box-message .fa, .error-message .fa, .cancel-reservation .no-reservation .fa, .loading .fa {
+    font-size: 150%;
+    vertical-align: top;
+    line-height: 30px;
+    margin-right: 15px; }
+
+.error-message, .cancel-reservation .no-reservation {
+  color: #c40f24; }
+  .error-message .fa, .cancel-reservation .no-reservation .fa {
+    color: #950b1b; }
+
+.date.ng-enter {
+  transition: opacity .3s;
+  opacity: 0; }
+
+.date.ng-enter-active {
+  opacity: 1; }
+
+.form-container.ng-hide-add {
+  opacity: 1;
+  transition: opacity .2s; }
+
+.form-container.ng-hide-add-active {
+  opacity: 0; }
+
+.form-container.ng-hide-remove, .loading.ng-hide-remove, .date-list.ng-hide-remove {
+  opacity: 0;
+  transition: opacity .2s; }
+
+.form-container.ng-hide-remove-active, .loading.ng-hide-remove-active {
+  opacity: 1; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+/*# sourceMappingURL=main.css.map */

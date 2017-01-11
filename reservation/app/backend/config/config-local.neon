@@ -1,0 +1,8 @@
+parameters:
+    database:
+        dsn: '%database.driver%:host=%database.host%;dbname=%database.dbname%'
+        driver: mysql
+        host: localhost
+        dbname: reservations
+        user: reservations
+        password: reservations
